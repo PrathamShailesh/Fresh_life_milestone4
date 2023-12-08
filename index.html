@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fresh Life</title>
-    <script src="https://kit.fontawesome.com/e4eba9a216.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/e4eba9a216.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <img src="./assets/Group 1 (4).png" alt="" style="width: 228px;" class="logo">
-        <a href="./about.html" class="contact"><h2>About</h2></a>
+      <img src="./assets/Group 1 (4).png" alt="" class="logo" />
+      <a href="./about.html" class="contact"><h2>About</h2></a>
     </header>
+
     <div class="main">
-        <div class="inner_main">
-        <h1 style="font-size: 68px;">Fresh Life</h1>
-        <h2 class="detail" style="font-size: 30px;">Fresh Life is the website that brings all the foodies together . Here you can find almost every favorite recipe of yours .</h2>
-        <input type="text" placeholder="Search..." class="search">
-        </div>
+      <div class="innerMain">
+        <h1>Fresh Life</h1>
+        <h2 class="detail">
+          Fresh Life is the website that brings all the foodies together . Here
+          you can find almost every favorite recipe of yours .
+        </h2>
+        <input type="text" placeholder="Search..." class="search" />
+      </div>
     </div>
-    <br>
-    <div class="content">
+
+    <br />
+
+    <div class="mainContent">
+      <div>
         <div>
-            <h2>Random Meal : -</h2>
+          <h2>Random Meal : -</h2>
         </div>
-        <div class="random" onclick="document.querySelector('.modal').style.display='block'">
-            <div >
-
-                <img src="" alt="" >
-            </div>
-            <h3>Random</h3>
+        <div class="random" onclick="popupOpen()">
+          <div>
+            <img src="" alt="" />
+          </div>
+          <h3>Random</h3>
         </div>
-    </div>
-
-    <div class="modal" style="display: none;">
-        <div class="head">Ingridients</div>
-        <div class="close" onclick="document.querySelector('.modal').style.display='none'">&times;</div>
-        <div class="div">
-            <ul class="ingridients">
-                <!-- <li>fef</li>
-                <li>fef</li> -->
-            </ul>
+      </div>
+      <div class="fullModal">
+        <div class="modal" style="display: none">
+          <div class="head">
+            <div>Ingridients</div>
+            <div class="close" onclick="popupClose()">&times;</div>
+          </div>
+          <div>
+            <div class="ingridients"></div>
+          </div>
         </div>
-    </div>
+      </div>
 
-
-
-
-
-    <br>
-    <div class="div">
-
-        <h2>List of search meals</h2>
+      <div class="line"></div>
+      <div class="list">
+        <h2>List of search meals:-</h2>
         <h2 class="categories_name">Search Something Above</h2>
-    </div>
-    <div class="mega">
-
+      </div>
+      <div class="searchItems"></div>
     </div>
 
     <footer>
-        <div class="social_media">
-
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-google-plus"></i></a>
-        </div>
-        <div class="home">
-            <a href="">Home</a>
-            <a href="./about.html">About</a>
-            <a href="">Contact Us</a>
-        </div>
-        <div class="credit">
-            <h4>website Credits :- Pratham Shailesh Dsouza</h4>
-        </div> 
+      <div class="social_media">
+        <a href="https://github.com/PrathamShailesh"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/pratham-shailesh-dsouza-b7246b27b/"
+          ><i class="fa-brands fa-linkedin sm"></i
+        ></a>
+        <a href="https://twitter.com/i/flow/login"
+          ><i class="fa-brands fa-x-twitter sm"></i
+        ></a>
+        <a href=""><i class="fa-brands fa-google-plus sm"></i></a>
+      </div>
+      <div class="home">
+        <a href="">Home</a>
+        <a href="./about.html">About</a>
+        <a href="">Contact Us</a>
+      </div>
+      <div class="credit">
+        <h4>Design Credits :- Pratham Shailesh Dsouza</h4>
+      </div>
     </footer>
-    
-
 
     <script src="./new.js"></script>
-
-
-    
-</body>
+  </body>
 </html>

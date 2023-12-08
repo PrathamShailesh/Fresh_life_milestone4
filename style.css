@@ -1,47 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 body{
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
+
+
+.logo{
+    width: 228px;
+}
+
+
 header{
     display: flex;
     justify-content: space-between;
     
 }
+ 
 
 header img{
     padding-left: 180px;
     
 }
 
+
 .contact{
     padding-right: 180px;
 }
+
 
 a{
     text-decoration: none;
     color: black;
 }
 
+
 .main{
-    background-image: url("/assets/HeaderBackground.png");
+    background-image: url("./assets/HeaderBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 400px;
     text-align: center;
     display: flex;
     justify-content: center;
 }
-.inner_main{
+
+
+.innerMain{
     padding-top: 30px;
     width: 680px;
     font-size: 15px;
     line-height: 30px;
-    /* border: 1px red solid; */
-
 }
 
+
+.innerMain h1{
+    font-size: 68px;
+     color: #2D602C;
+}
+
+
+.detail{
+    padding: 10px;
+    font-size: 30px;
+     color: #FF9900;
+}
+
+
+.mainContent{
+    margin: 50px 200px 0 200px;
+}
+
+
+.random_image{
+    height: 285px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 15px; 
+}
+
+
+.random{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    flex-wrap: wrap;
+}
 
 
 input{
@@ -50,21 +94,200 @@ input{
     border-radius: 17px;
     border: none;
 }
+
+
 input:focus{
     outline: none;
 }
 
-.detail{
-    padding: 10px;
+
+input::placeholder{
+    padding-left: 5em;
 }
+
+
+.fullModal{
+    display: flex;
+    justify-content: center;
+}
+
 
 .modal{
     position:fixed;
-    /* z-index: 100; */
-    /* display: flex;
+    top: 10em;
+    background-color: rgb(112, 211, 90);
+    width: 710px;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
     justify-content: center;
+    /* transform: translate(0,-50%) scale(0.1); */
+    transition: transform 0.4s,top 0.4s;
+}
+
+
+.open_popup{
+    transition: translate(0,-50%) scale(1);
+}
+
+
+.head{
+    background-color: #4FDBCA;
+    height: 99px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    border: 1px red solid; */
-    top: 20%;
-    left: 50%;
+    font-size: 30px;
+    padding-left: 30%;
+}
+
+
+.ingridients{
+    padding: 0 100px;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+.close{
+    font-size: 50px;
+}
+
+
+.searchItems{
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    text-align: center;
+    grid-row-gap: 100px;
+    flex-wrap: wrap;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.image{
+    width: 266px;
+    height: 299;
+    box-shadow: 3px 4px 15px;
+    border-radius: 10px;
+}
+ 
+
+.line{
+    background-color: #6c6565;
+    width: 100%;
+    height: 3px;
+    margin: 5em 0;
+}
+
+
+.categories_name{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+footer{
+    background-color: #48CF82;
+    margin-top: 50px;
+}
+
+
+.social_media{
+    display: flex;
+    justify-content: center;
+}
+
+
+.social_media a{
+    margin: 50px 30px;
+    background-color: #4FDBCA;
+    border-radius: 50px;
+    padding: 20px; 
+}
+
+
+i{
+    font-size: 50px;
+}
+
+
+.home{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+.home a{
+    
+    margin: 20px;
+}
+
+
+.credit{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 1px 0;
+}
+
+@media only screen and (max-width: 600px){
+
+    header{    
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+    header img{
+        padding-left: 10%;
+        
+    }
+
+
+    .detail{
+        font-size: 2em;
+    }
+
+
+    .innerMain{
+        width: auto;
+    }
+
+
+    .searchItems{
+        display: grid;
+        grid-template-columns: repeat(1,3fr);
+    }
+
+
+    .mainContent{
+        margin: auto;
+    }
+
+
+    .social_media a{
+        margin: 0;
+        padding: 20px; 
+    }
+
+
+    input{
+        height: 30pxpx;
+        width: 200px;
+        border-radius: 17px;
+        border: 1px red solid;
+    }
+
+
+    .modal{
+        width: 410px;
+    }
+
 }
