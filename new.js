@@ -1,11 +1,11 @@
 const ingredients = document.querySelector(".ingridients");
 const searchBox = document.querySelector(".search");
 const category_name = document.querySelector(".categories_name");
-const mega = document.querySelector(".searchItems");
+const allSearchedItems = document.querySelector(".searchItems");
 
 
 
-
+//fetching api for the random food item
 fetch("https://www.themealdb.com/api/json/v1/1/random.php")
   .then((response) => {
     return response.json();
@@ -19,9 +19,8 @@ fetch("https://www.themealdb.com/api/json/v1/1/random.php")
 
 
 
-
+//creating the random food item
 function create(data) {
-  console.log(data);
   if (data.meals && Array.isArray(data.meals) && data.meals.length > 0) {
     const mealDetails = data.meals[0];
     randomMeal = " ";
@@ -29,21 +28,26 @@ function create(data) {
         <img src="${mealDetails.strMealThumb}" class="random_image">
         <h3>${mealDetails.strMeal}</h3>`;
     ingredientName = " ";
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 8; i++) {
       const strIngredient = `${mealDetails["strIngredient" + i]}`;
+      if(strIngredient==""){
+        break
+      }
       ingredientName += `
             <li>${strIngredient}</li>
             `;
+            
     }
     ingredients.innerHTML = ingredientName;
   }
   const random = document.querySelector(".random");
+  //pushing the fetched data of the food item to html
   random.innerHTML = randomMeal;
 }
 
 
 
-
+//search box
 searchBox.addEventListener("input", function () {
   const hero = searchBox.value;
   const search = `https://www.themealdb.com/api/json/v1/1/search.php?s=` + hero;
@@ -53,38 +57,35 @@ searchBox.addEventListener("input", function () {
 
 
 
-
+//fetching input data from the search box 
 function searchbar(search) {
   fetch(search)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       searchElements(data.meals);
     })
     .catch((error) => {
-      console.log(error);
     });
 }
 
 
 
-
+//creating searched elements and pushing it to html
 function searchElements(data) {
   let searchdata = "";
 
   for (let i = 0; i <= data.length; i++) {
-    console.log(data[i]);
     searchdata += `
-        <div class="${data[i].idMeal}">
+        <div class="">
         <div class="images">
         <img src="${data[i].strMealThumb}" alt="${data[i].strMeal}"  class="image">
         </div>
         <h3>${data[i].strMeal}</h3>
         </div>`;
 
-    mega.innerHTML = searchdata;
+    allSearchedItems.innerHTML = searchdata;
   }
 }
 
@@ -92,13 +93,14 @@ function searchElements(data) {
 
 
 const modal = document.querySelector(".modal");
+const blur=document.querySelector(".blur")
 
-
-mega.addEventListener("click", function (event) {
+//ingridients box for all the food items
+allSearchedItems.addEventListener("click", function (event) {
   const element = event.target;
   if (element.tagName === "IMG") {
-    // ingredients.innerHTML=" "
     modal.style.display = "block";
+    blur.style.filter="blur(5px)"
     const foodName = element.alt;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`)
       .then((response) => {
@@ -106,12 +108,17 @@ mega.addEventListener("click", function (event) {
       })
       .then((data) => {
         const meal = data.meals[0];
-        for (let i = 1; i <= 5; i++) {
+
+        let ingredientName = ""
+
+        for (let i = 1; i <= 10; i++) {
           const strIngredient = `${meal["strIngredient" + i]}`;
+          if(strIngredient==""){
+            break
+          }
           ingredientName += `
                     <li class="remove">${strIngredient}</li>
                     `;
-          console.log(strIngredient);
         }
         ingredients.innerHTML = ingredientName;
       })
@@ -124,16 +131,18 @@ mega.addEventListener("click", function (event) {
 
 
 
+
+//opening popup box for indridients
 function popupOpen() {
   modal.style.display = "block";
   modal.classList.add("open_popup");
-  // ingredients.innerHTML=oj
+  blur.style.filter="blur(5px)"
 }
 
 
 
-
+// closing popup box for indridients
 function popupClose() {
   modal.style.display = "none";
-  // ingredients.remove()
+  blur.style.filter="blur(0px)"
 }

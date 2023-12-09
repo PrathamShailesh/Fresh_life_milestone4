@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+
 body{
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
+
+.blur{
+    background-image: url("./assets/Group12.png");
+
+}
+
 
 
 .logo{
@@ -78,6 +87,11 @@ a{
     height: 285px;
     border-radius: 10px;
     box-shadow: 3px 4px 15px; 
+    transition: height 0.5s;
+}
+
+.random_image:hover{
+    height: 300px;
 }
 
 
@@ -93,6 +107,7 @@ input{
     width: 672px;
     border-radius: 17px;
     border: none;
+    font-size: 20px;
 }
 
 
@@ -101,8 +116,11 @@ input:focus{
 }
 
 
+
+
 input::placeholder{
     padding-left: 5em;
+
 }
 
 
@@ -145,7 +163,7 @@ input::placeholder{
 
 
 .ingridients{
-    padding: 0 100px;
+    padding: 30px 100px 30px 100px;
     font-size: 25px;
     font-family: 'Poppins', sans-serif;
 
@@ -173,6 +191,11 @@ input::placeholder{
     height: 299;
     box-shadow: 3px 4px 15px;
     border-radius: 10px;
+    transition: width 0.5s;
+}
+
+.image:hover{
+    width: 280px;
 }
  
 
@@ -237,7 +260,7 @@ i{
     padding: 1px 0;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
 
     header{    
         justify-content: space-between;
@@ -263,7 +286,16 @@ i{
 
     .searchItems{
         display: grid;
-        grid-template-columns: repeat(1,3fr);
+        grid-template-columns: repeat(2,3fr);
+    }
+
+
+    .random_image{
+        height: 150px;
+    }
+
+    .image{
+        width: 150px;
     }
 
 
@@ -288,6 +320,31 @@ i{
 
     .modal{
         width: 410px;
+    }
+
+    i{
+        font-size: 20px;
+    }
+
+    .social_media a{
+        margin: 50px 30px;
+    }
+
+    .home{
+        font-size: 25px;
+    }
+
+    .credit{
+        font-size: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .searchItems{
+        display: grid;
+        grid-template-columns: repeat(1,3fr);
     }
 
 }
