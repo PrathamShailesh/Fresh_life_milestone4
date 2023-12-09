@@ -139,7 +139,6 @@ input::placeholder{
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    /* transform: translate(0,-50%) scale(0.1); */
     transition: transform 0.4s,top 0.4s;
 }
 
@@ -264,14 +263,18 @@ i{
 @media only screen and (max-width: 800px){
 
     header{    
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
     }
 
 
     header img{
-        padding-left: 10%;
+        padding-left: 0%;
         
+    }
+
+    .contact{
+        padding-right: 0px;
     }
 
 
@@ -281,6 +284,7 @@ i{
 
 
     .innerMain{
+        padding-top: 10px;
         width: auto;
     }
 
@@ -315,7 +319,6 @@ i{
         height: 30pxpx;
         width: 200px;
         border-radius: 17px;
-        border: 1px red solid;
     }
 
 
@@ -328,8 +331,9 @@ i{
     }
 
     .social_media a{
-        margin: 50px 30px;
+        margin: 50px 0px;
     }
+    
 
     .home{
         font-size: 25px;
